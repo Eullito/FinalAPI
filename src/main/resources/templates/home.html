@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<div>
+<h1>HOME</h1>
+<th:block th:if="${session.mdto==null}">
+	<p>
+		<a href="/user/login">SignIn</a>
+		<a href="/user/addUser">SignUp</a>
+	</p>
+</th:block>
+<th:block th:unless="${session.mdto==null}">
+	<p>
+<!-- 		<span th:text="${session.mdto.role}"></span> -->
+		<span th:text="${session.mdto.id}"></span>
+		<a href="/user/logout">로그아웃</a>
+	</p>
+</div>
+</body>
+</html>
+
